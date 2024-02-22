@@ -1,4 +1,4 @@
-package com.sm;
+package com.sm.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -30,7 +30,7 @@ public class NettyServer {
                     });
             System.out.println("netty server start。。");
             // binded port to listening
-            ChannelFuture cf = bootstrap.bind(9000).sync();
+            final ChannelFuture cf = bootstrap.bind(9000).sync();
             // add events to cf for listen
             cf.addListener(new ChannelFutureListener() {
                 @Override
